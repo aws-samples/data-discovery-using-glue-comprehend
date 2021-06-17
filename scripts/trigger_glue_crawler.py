@@ -3,7 +3,7 @@ import boto3
 import csv
 import boto3
 account_id = boto3.client("sts").get_caller_identity()["Account"]
-Glue_role_arn = 'arn:aws:iam::'+account_id+":role/Lambda-S3-Glue-comprehend" # replace with your IAM role created in step X
+Glue_role_arn = 'arn:aws:iam::'+account_id+":role/Lambda-S3-Glue-comprehend" # If you didn't use the CF template and create the IAM user manually change it here 
 client_glue = boto3.client('glue')
 iam = boto3.client('iam')
 s3 =boto3.client('s3')
