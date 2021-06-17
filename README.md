@@ -13,7 +13,7 @@ By allowing BI Authors who are using Amazon QuickSight to search and discover da
 4. [Glue job to update the Data Catalog using Comprehend Detect PII API](scripts/Glue_Comprehend_Job.py)
 5. [Lambda function that get automatically triggered once the AWS Glue Crawler successfully complete](scripts/glue_comprehend_workflow.py)
 6. [Train Amazon Comprehend Custom entity](scripts/comprehend_create_custom_entity.py)
-7. [Comprehend inference job](scripts/Inference_custom_entity _recognition.py)
+7. [Comprehend inference job] (scripts/Inference_custom_entity _recognition.py)
 8. [Glue job to update the Data Catalog using Comprehend Custom entity](scripts/glue_comprehend_workflow_custom.py )
 
 ## Security
