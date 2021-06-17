@@ -1,6 +1,6 @@
 ## Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend
 
-TODO: Fill this README out!
+This Github repository is created to provide the sample source for the AWS blog post- Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend
 
 Be sure to:
 
