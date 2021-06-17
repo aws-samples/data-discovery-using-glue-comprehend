@@ -14,6 +14,6 @@ glueJobName = "Glue_Comprehend_Job"
 # Define Lambda function
 def lambda_handler(event, context):
 
-    response = client.start_job_run(JobName = glueJobName)
+    response = client.start_job_run(JobName = <Upadate with your glue job name>)
 
     return response
