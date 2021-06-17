@@ -16,7 +16,6 @@ def lambda_handler(event, context):
     first_line_list = first_line.split(",")
     bucket = first_line_list[0]
     key = first_line_list[1]
-    print (key)
     obj= s3.get_object (Bucket = bucket , Key = key)
     data = obj['Body'].read().decode('utf-8').splitlines()
     lines = csv.reader(data)
