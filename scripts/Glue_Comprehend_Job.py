@@ -20,9 +20,6 @@ key_list = key.split("/")
 key_prefix= key_list[0]
 crawler_name = key_list[1].split(".")[0]
 crawler_DB = crawler_name +"_DB"
-
-
-
 import sys
 sys.path.insert(0, '/glue/lib/installation')
 keys = [k for k in sys.modules.keys() if 'boto' in k]
@@ -37,18 +34,13 @@ print(boto3.__version__)
 s3 =boto3.client('s3')
 
 
-# TODO implement #https://www.youtube.com/watch?v=5nuUmlezrHs
-#bucket = event ['Records'][0]['s3']['bucket']['name']
-#key = event ['Records'][0]['s3']['object']['key']
-#key = 'row-data/row_all.csv'
+# read the first line of the dataset to sent to comprehend 
+
 obj= s3.get_object (Bucket = bucket , Key = key)
 data = obj['Body'].read().decode('utf-8').splitlines()
 lines = csv.reader(data)
 headers = next(lines)
 first_line_list = next(lines)
-
-
-
 
 escalation_intent_name = os.getenv('ESCALATION_INTENT_NAME', None)
 
