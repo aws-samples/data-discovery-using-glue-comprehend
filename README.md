@@ -8,7 +8,7 @@ By allowing BI Authors who are using Amazon QuickSight to search and discover da
 
 ## Table of Contents
 1. Datasets sample.
-2. AWS CloudFormation Templates.
+2. AWS CloudFormation Template.
 3. Lambda function to create AWS Glue DB,Crawler and  Glue Data Catalog.
 4. Glue job to update the Data Catalog using Comprehend Detect PII API. 
 5. Lambda function that get automatically triggered upon the AWS Glue Crawler successfully complete.
