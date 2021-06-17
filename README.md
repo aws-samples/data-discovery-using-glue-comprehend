@@ -1,4 +1,4 @@
-## My Project
+## Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend
 
 TODO: Fill this README out!
 
