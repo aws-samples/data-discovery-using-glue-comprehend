@@ -1,6 +1,6 @@
 ## Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend
 
-This Github repository is created to provide the sample source for the AWS blog post- Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend
+This Github repository is created to provide the sample source for the AWS blog post- Simplify Data Discovery for Business Users using AWS Glue and Amazon Comprehend.
 
 In this blog post we will discuss how to bridge the gap between Domain Data Experts and business focused consumer teams known for authoring BI reports and dashboards.
 
