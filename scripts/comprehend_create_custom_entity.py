@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     import boto3
     import uuid
     account_id = boto3.client("sts").get_caller_identity()["Account"]
-    comprehend = boto3.client("comprehend", region_name="us-east-1")
+    comprehend = boto3.client("comprehend")
 
     response = comprehend.create_entity_recognizer(
     RecognizerName="Recognizer-blog".format(str(uuid.uuid4())),
