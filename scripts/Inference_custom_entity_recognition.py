@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     s3 =boto3.client('s3')
     account_id = boto3.client("sts").get_caller_identity()["Account"]
     bucket = '<Your Bucket name>' # change to your s3 bucke
-    EntityRecognizerArn_job = "arn:aws:comprehend:us-east-1:"+account_id+:entity-recognizer/Recognizer-blog" #  replace with your Entity Recognizer Arn
+    EntityRecognizerArn_job = "arn:aws:comprehend:us-east-1:"+account_id+:"entity-recognizer/Recognizer-blog" #  replace with your Entity Recognizer Arn
     DataAccessRoleArn_user  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend"  # replace with your IAM user created before
     account_id = boto3.client("sts").get_caller_identity()["Account"]
     key = 'file_location/file_name.txt'
