@@ -202,7 +202,7 @@ Resources:
         Fn::GetAtt:
           - Role1ABCC5F0
           - Arn
-      FunctionName: trigger_glue_crawler
+      FunctionName: trigger_data_cataloging
       Handler: index.main
       Runtime: python3.7
       Timeout: 240
