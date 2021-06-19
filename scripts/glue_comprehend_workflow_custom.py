@@ -1,3 +1,4 @@
+# read comprehend job output https://labs.consol.de/aws/cloud/machine-learning/2020/11/03/AWS-Comprehend-and-the-output.html
 import os, boto3
 import json
 import csv
@@ -7,8 +8,8 @@ s3 =boto3.client('s3')
 comprehend = boto3.client('comprehend')
 client_glue = boto3.client('glue')
 s3_resource = boto3.resource('s3')
-bucket ="replace with your S3 bucket name"
-key = "comprehend_output/replace with the output of the comprehend job/output/output.tar.gz"
+bucket ="<Your S3 bucket name>"
+key = "comprehend_output/<Random Number>/output/output.tar.gz" # change with comprehend output file location
 account_id = boto3.client("sts").get_caller_identity()["Account"]
 key_filename = 'file_location/file_name.txt'
 obj= s3.get_object (Bucket = bucket , Key = key_filename)
@@ -17,15 +18,6 @@ first_line = first_line_row.decode("utf-8")
 first_line_list = first_line.split(",")
 bucket = first_line_list[0]
 key_filename = first_line_list[1]
-
-#read the first line to use later to map to comprehend output
-obj= s3.get_object (Bucket = bucket , Key = key_filename)
-data = obj['Body'].read().decode('utf-8').splitlines()
-lines = csv.reader(data)
-headers = next(lines)
-first_line_list_data = next(lines)
-
-
 key_list = key_filename.split("/")
 key_prefix= key_list[0]
 crawler_name = key_list[1].split(".")[0]
@@ -80,7 +72,6 @@ while True:
             doc += line_out
 
 flat_list= doc.splitlines()
-
 f.close()
 
 # write the final output
@@ -98,7 +89,13 @@ for key in allowed_keys:
         updated_table[key] = original_table[key]
 table_len = (len(updated_table['StorageDescriptor']['Columns']))
 update_comment_count = 0
-
+#read the one line file to try to map it to the inference output from custom comprehend
+obj= s3.get_object (Bucket = bucket , Key = 'row-data-out/row-data-out.csv')
+first_line_row= obj ['Body'].read()
+first_line = first_line_row.decode("utf-8")
+first_line_list = first_line.split(",")
+print (first_line_list)
+#read the Glue flat file
 
 
 flat_list_index = 0
@@ -112,7 +109,7 @@ for i in flat_list:
     # use row data to get the glue index by matching the orginal text with the detected comprehent text
     detected_text =first_line[BeginOffset:EndOffset]
     detected_text_index =[]
-    detected_text_index =  [i for i, s in enumerate(first_line_list_data) if detected_text in s]
+    detected_text_index =  [i for i, s in enumerate(first_line_list) if detected_text in s]
     detected_text_index = int(detected_text_index[0])
     updated_table['StorageDescriptor']['Columns'][detected_text_index]['Comment'] = detected_text_comprehend_comment
     glue_table = client_glue.update_table( DatabaseName=crawler_DB,TableInput=updated_table)
