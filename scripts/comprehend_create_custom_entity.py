@@ -15,11 +15,11 @@ def lambda_handler(event, context):
     InputDataConfig={
         'DataFormat': 'COMPREHEND_CSV',
         "EntityTypes": [
-            {"Type": "customer_id",
+            {"Type": "customer information ID",
             },
-            {"Type": "education_status",
+            {"Type": "current level of education",
             },
-            {"Type": "credit_rating",
+            {"Type": "customer credit rating",
             }
 
         ],
