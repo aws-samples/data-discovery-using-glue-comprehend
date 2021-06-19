@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     comprehend = boto3.client("comprehend", region_name="us-east-1")
 
     response = comprehend.create_entity_recognizer(
-    RecognizerName="Recognizer-blog-v3".format(str(uuid.uuid4())),
+    RecognizerName="Recognizer-blog".format(str(uuid.uuid4())),
     LanguageCode="en",
     DataAccessRoleArn  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend",  # replace with your IAM user created before
     InputDataConfig={
