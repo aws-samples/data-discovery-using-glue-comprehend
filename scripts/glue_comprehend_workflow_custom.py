@@ -1,4 +1,4 @@
-# read comprehend job output https://labs.consol.de/aws/cloud/machine-learning/2020/11/03/AWS-Comprehend-and-the-output.html
+# reference ...read comprehend job output https://labs.consol.de/aws/cloud/machine-learning/2020/11/03/AWS-Comprehend-and-the-output.html
 import os, boto3
 import json
 import csv
