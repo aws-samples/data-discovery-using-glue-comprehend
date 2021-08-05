@@ -386,7 +386,7 @@ Resources:
       Command:
         Name: pythonshell
         PythonVersion: "3"
-        ScriptLocation: s3://customerpublicmena/blog/triger_glue_comprehend_workflow_v3.py
+        ScriptLocation: s3://aws-bigdata-blog/artifacts/simplify-data-discovery-for-business-users/blog/triger_glue_comprehend_workflow_v3.py
       Role:
         Fn::GetAtt:
           - Role1ABCC5F0
@@ -394,7 +394,7 @@ Resources:
       DefaultArguments:
         --bucket_name:
           Ref: uploadBucketName
-        --extra-py-file: s3://customerpublicmena/blog/python/library/boto3-1.17.70-py2.py3-none-any.whl
+        --extra-py-file: s3://aws-bigdata-blog/artifacts/simplify-data-discovery-for-business-users/blog/python/library/boto3-1.17.70-py2.py3-none-any.whl
       Name: Glue_Comprehend_Job
     Metadata:
       aws:cdk:path: CdkBlogV2Stack/Glue
