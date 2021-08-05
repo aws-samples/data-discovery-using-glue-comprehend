@@ -2,6 +2,9 @@ def lambda_handler(event, context):
 
 
     #####################Comprehend create Custom entity  #################################\
+    ######## 1- creat Lambda function Author from scratch with runtime Python 3.8
+    ########2- Use Lambda-S3-Glue-comprehend role
+    ########3- Increase Timeout to 2 min
      #Note that the S3 bucket must be in the same region of Comprehend.
     import boto3
     import uuid
@@ -11,7 +14,7 @@ def lambda_handler(event, context):
     response = comprehend.create_entity_recognizer(
     RecognizerName="Recognizer-blog".format(str(uuid.uuid4())),
     LanguageCode="en",
-    DataAccessRoleArn  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend",  # replace with your IAM user created before
+    DataAccessRoleArn  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend", 
     InputDataConfig={
         'DataFormat': 'COMPREHEND_CSV',
         "EntityTypes": [
