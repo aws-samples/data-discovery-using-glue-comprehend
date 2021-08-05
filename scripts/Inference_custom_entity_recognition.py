@@ -1,3 +1,8 @@
+######## 1- creat Lambda function Author from scratch with runtime Python 3.8
+########2- Use Lambda-S3-Glue-comprehend role
+########3- Increase Timeout to 2 min
+########4- change to your s3 bucke
+
 import csv
 
 def lambda_handler(event, context):
@@ -6,8 +11,8 @@ def lambda_handler(event, context):
     s3 =boto3.client('s3')
     account_id = boto3.client("sts").get_caller_identity()["Account"]
     bucket = '<Your Bucket name>' # change to your s3 bucke
-    EntityRecognizerArn_job = "arn:aws:comprehend:us-east-1:"+account_id+:"entity-recognizer/Recognizer-blog" #  replace with your Entity Recognizer Arn
-    DataAccessRoleArn_user  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend"  # replace with your IAM user created before
+    EntityRecognizerArn_job = "arn:aws:comprehend:us-east-1:"+account_id+:"entity-recognizer/Recognizer-blog" #  replace with your Entity Recognizer Arn if needed
+    DataAccessRoleArn_user  = "arn:aws:iam::"+account_id+":role/Lambda-S3-Glue-comprehend"  # replace with your IAM user created before if needed
     account_id = boto3.client("sts").get_caller_identity()["Account"]
     key = 'file_location/file_name.txt'
     obj= s3.get_object (Bucket = bucket , Key = key)
