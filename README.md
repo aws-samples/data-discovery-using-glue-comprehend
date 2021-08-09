@@ -11,7 +11,7 @@ By allowing BI Authors who are using Amazon QuickSight to search and discover da
 
 ## Table of Contents
 1. [Datasets sample](https://github.com/aws-samples/data-discovery-using-glue-comprehend/tree/main/Datasets).
-2. [AWS CloudFormation Template](CloudFormation_template/template_trigger_glue_crawler.yaml)
+2. [AWS CloudFormation Template](CloudFormation_template/)
 3. [Lambda function to create AWS Glue DB,Crawler and  Glue Data Catalog](scripts/trigger_glue_crawler.py)
 4. [Glue job to update the Data Catalog using Comprehend Detect PII API](scripts/Glue_Comprehend_Job.py)
 5. [Lambda function that get automatically triggered once the AWS Glue Crawler successfully complete](scripts/glue_comprehend_workflow.py)
