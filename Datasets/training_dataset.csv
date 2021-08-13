@@ -1,4 +1,4 @@
-column_01,column_02,column_03,column_04,column_05,column_06,column_07,column_08,column_09,column_10,column_11,column_12,column_13,column_14,column_15,column_16,column_17,column_18
+cid,salut,fname,lname,bcountry,eaddress,bdate,lrdate,gender,mstatus,estatus,pestimte,crating,bpotential,vcount,lbound,ubound,aid
 AAAAAAAACCNIAAAA,Dr.,Tina,Marks,EL SALVADOR,Tina.Marks@V2h1kiVvD9i0t36b37fG.edu,30/09/1950,11/01/2002,M,U,Primary,3000,Low Risk,501-1000,0,120001,130000,AAAAAAAAAHMDAAAA
 AAAAAAAAPELFBAAA,Sir,John,Valentine,SRI LANKA,John.Valentine@ygE.edu,05/09/1966,17/01/2002,F,U,2 yr Degree,10000,Low Risk,5001-10000,0,0,10000,AAAAAAAAHHIBAAAA
 AAAAAAAAGFNFBAAA,Miss,Linda,Goss,GRENADA,Linda.Goss@Tm0dvyk3tc1Cms.edu,18/11/1981,01/02/2002,M,S,Advanced Degree,8000,Low Risk,501-1000,0,30001,40000,AAAAAAAAHMDGAAAA
