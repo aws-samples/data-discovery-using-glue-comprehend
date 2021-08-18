@@ -121,10 +121,12 @@ Resources:
                   - logs:Stop*
                   - logs:Test*
                   - logs:Associate*
-                  - log:Cancel*
-                  - log:Delete*
-                  - log:Put*
-                  - log:Update* 
+                  - logs:Cancel*
+                  - logs:Delete*
+                  - logs:Put*
+                  - logs:Update*
+                  - logs:PutLogEvents
+
                 Effect: Allow
                 Resource: "*"
             Version: "2012-10-17"
